@@ -36,9 +36,9 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.1.8",
     "@angular-eslint/builder": "17.5.2",
-    "@angular-eslint/eslint-plugin": "17.5.2",
+    "@angular-eslint/eslint-plugin": "^19.2.1",
     "@angular-eslint/eslint-plugin-template": "17.5.2",
-    "@angular-eslint/schematics": "17.5.2",
+    "@angular-eslint/schematics": "^19.2.1",
     "@angular-eslint/template-parser": "17.5.2",
     "@angular/cli": "^19.2.3",
     "@angular/compiler-cli": "^19.1.7",
