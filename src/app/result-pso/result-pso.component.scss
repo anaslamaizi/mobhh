@@ -1,0 +1,86 @@
+.solution-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+
+  .summary-section {
+    margin-bottom: 20px;
+    p {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+  }
+
+  .arrow {
+    margin-left: 8px; /* Espacement entre le nom du technicien et la flèche */
+    transition: transform 0.3s, color 0.3s; /* Animation lors de l'expansion/reduction */
+    color: black; /* Couleur par défaut de la flèche */
+  }
+  
+  .expanded {
+    transform: rotate(180deg); /* Faire pivoter la flèche de 180 degrés lorsque le bloc est étendu */
+    color: #3498db; /* Couleur de la flèche lorsqu'elle est étendue */
+  }
+  
+
+  .jobs-details {
+    .job-card {
+      padding: 15px;
+      background-color: #ffffff;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      
+      h3 {
+        margin-bottom: 10px;
+        font-size: 20px;
+        color: #333;
+      }
+
+      p {
+        margin: 5px 0;
+        font-size: 16px;
+      }
+
+      .interval-section {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        
+        .advance, .delay {
+          p {
+            margin: 0;
+            font-size: 14px;
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+}
+
+.download-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #2980b9;
+  }
+}

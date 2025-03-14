@@ -1,0 +1,85 @@
+.header {
+  //overflow: hidden;
+  
+  padding: 20px 10px;
+  background-size: 55px;
+  background-position: 15px 20px;
+  background-color:#282d32;
+}
+
+/* Style the header links */
+.header .nav-link {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.logo {
+  text-decoration: none;
+  height: 10px;
+  width: fit-content;
+  color: rgb(255, 255, 255)
+}
+
+/* Change the background color on mouse-over */
+.header .nav-link:hover {
+  background-color: #3498db;
+  color: white;
+  font-size: 19px;
+}
+.header .pe-0:hover{
+  background-color: unset;
+}
+
+/* Style the active/current link*/
+.header a.active {
+  color: white;
+  background-color: #3498db;
+}
+
+/* Float the link section to the right */
+.header-right {
+  float: right;
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+.background-image {
+  width: 100%;
+  height: auto;
+}
+
+.overlay-button {
+  position: absolute;
+  top: 50%; /* Centrage vertical */
+  right: 10%; /* Bouton positionné à 10% du bord droit */
+  transform: translateY(-50%); /* Centrage vertical avec translation */
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: rgba(0, 123, 255, 0.8);
+  border: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.overlay-button mat-icon {
+  margin-right: 8px;
+}
+
+.overlay-button:hover {
+  transform: translateY(-55%);
+  background-color: rgba(0, 123, 255, 1);
+}
+

@@ -1,0 +1,62 @@
+<main id="main" class="main">
+  <div class="pagetitle">
+    <h1>LLP ASTAR FOR SPP</h1>
+    <nav>
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-item">Dashboard</li>
+        <li class="breadcrumb-item active">LLP ASTAR FOR SPP</li>
+      </ol>
+    </nav>
+  </div>
+ <!-- End Page Title -->
+
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
+        <div *ngIf="loading; else formTemplate" class="d-flex justify-content-center align-items-center">
+          <!-- feature-web -->
+          <!--app-spinner></app-spinner-->
+          <div class="spinner-border text-primary" style="width: 80px; height: 80px;" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+        <ng-template #formTemplate>
+          <form [formGroup]="myForm" class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <app-home-section-network-file
+                  [networkFile]="myForm"
+                  (dataChange)="handleDataChange($event)">
+                </app-home-section-network-file>
+              </div>  
+              <div class="col-md-4">
+                <app-home-section-algorithms [algorithm]="myForm"></app-home-section-algorithms>
+              </div>
+              <div class="col-md-4">
+                <app-home-section-date [nextDate]="myForm"></app-home-section-date>
+              </div>
+            </div>
+            <app-preview
+              [nodeData]="nodeData"
+              [arcData]="arcData"
+              (statusDepatArrivee)="handleStatusDepatArriveeChange($event)"
+              (startPointChange)="onStartPointChange($event)"
+              (endPointChange)="onEndPointChange($event)">
+            </app-preview>
+            <div class="row justify-content-center mt-3">
+              <!-- feature-web-->
+              <!--div class="my-custom-div"-->
+              <div class="col-auto">
+                <button class="btn btn-primary" (click)="submit()">Next</button>
+              </div>
+            </div>
+          </form>
+        </ng-template>
+      </div>
+
+    
+    </div>
+  </section>
+
+</main><!-- End #main -->

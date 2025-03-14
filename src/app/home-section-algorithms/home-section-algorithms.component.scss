@@ -1,0 +1,10 @@
+.my-custom-div{
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
+    padding: 10px;
+    @media (max-width: 1199px) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

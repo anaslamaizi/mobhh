@@ -1,0 +1,10 @@
+<div class="my-custom-div" [formGroup]="networkFile">
+    <h3>Road Network</h3>
+    <input type="file" (change)="onFileSelected($event)" #fileInput hidden>
+    <button class="btn btn-secondary" (click)="fileInput.click()">Upload File</button>
+    <div *ngIf="fileContent">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <i class="fa fa-check" style="color:#249b00">uploaded</i>
+    </div>
+    <p>* Only matrix-form instances are accepted</p>    
+</div>

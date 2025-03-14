@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "username": "prannou",
+      "firstname": "Philippe",
+      "lastname": "Rannou",
+      "password": "test",
+      "email": "philippe.rannou@capgemini.com",
+      "company": "Cap Gemini",
+      "job": "Web developper",
+      "photo": ""
+    },
+    {
+      "id": "92c2",
+      "firstname": "aicha",
+      "lastname": "aicha",
+      "username": "aicha",
+      "email": "aicha.tazouti@capgemini.com",
+      "password": "password"
+    }
+  ]
+}

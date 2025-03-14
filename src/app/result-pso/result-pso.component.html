@@ -1,0 +1,32 @@
+<div class="solution-container" *ngIf="solution">
+  <h2>Optimal Solution for Jobs</h2>
+  
+  <div class="summary-section">
+    <p><strong>Overall Score (OF):</strong> {{ solution.OF }}</p>
+    <p><strong>Total Time (sec):</strong> {{ timeTotal }} sec</p>
+  </div>
+  <button (click)="downloadJSON()" class="download-button">Download in JSON format</button>
+  <div class="jobs-details">
+    <div *ngFor="let job of listJobs; let i = index" class="job-card">
+      <h3 (click)="toggleJob(i)" style="cursor: pointer;">
+        Technicien {{ i + 1 }} 
+        <span class="arrow" [ngClass]="{'expanded': expandedJobs[i]}">
+          &#9660; <!-- Flèche vers le bas -->
+        </span>
+      </h3>
+      <div *ngIf="expandedJobs[i]">
+        <p><strong>Clients:</strong> {{ job.join(', ') }}</p>
+        <p><strong>Duration:</strong> {{ solution.t[i] }} minutes</p>
+
+        <div class="interval-section">
+          <div class="advance">
+            <p><strong>Allowed Early Arrival:</strong> {{ solution.xa[i] }} minutes</p>
+          </div>
+          <div class="delay">
+            <p><strong>Allowed Delay:</strong> {{ solution.xb[i] }} minutes</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

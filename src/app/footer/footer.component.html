@@ -1,0 +1,23 @@
+<div class="footer-dark">
+    <div class="container">
+        <div class="row">
+            <a href="javascript:void(0)" class="button" (click)="showAbout = !showAbout">About</a>
+            <a href="javascript:void(0)" class="button" (click)="showContact = !showContact">Contacts</a>
+            <div *ngIf="showAbout" class="col-md-9 item text">
+                <h2>MOBHEEL</h2>
+                <h4>(MOBilite Hydrogène Electronic Embarqués Leger)</h4>
+                <p>The goal of this open innovation project is to develop new comfort technologies that can be adapted to all vehicles and are independent of the manufacturer's technology, by enhancing the recommendation system. For example, the creation of a tool capable of detecting drivers and their behavior solely based on their speed. This project also involves monitoring the environment and potential hazards by observing the people around, as well as internally tracking movements and signs of fatigue or drowsiness. Developing tools to assist drivers during driving and issuing alerts in case of danger is a key focus of this project.​</p>
+            </div>
+            <div *ngIf="showContact" class="col-sm-6 col-md-3 item">
+                
+                <h2>Contacts</h2>
+                <ul>
+                    <li><a >Thi Tran : thi.tran&#64;capgemini.com</a></li>
+                    <li><a >Ayman Soufi : ayman.soufi&#64;capgemini.com</a></li>
+                </ul>
+            </div>
+        </div>
+        <ul><P class="copyright"><a>Capgemini © 2024</a></ul>
+    </div>
+</div>
+

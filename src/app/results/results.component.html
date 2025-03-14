@@ -1,0 +1,65 @@
+<main id="main" class="main">
+  <div *ngIf="loading; else formTemplate2">
+    <div class="spinner-border text-primary" style="width: 80px; height: 80px;" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  <ng-template #formTemplate2>
+
+
+
+    <div class="row mb-3">
+      <div class="col-12 text-center">
+        <p>The route optimized by <span class="bold-blue">{{algorithm | titlecase}}</span> suggests taking the points:
+        </p>
+        <div class="mb-3 no-space">
+            <img src="./../../assets/depart.png">
+            <span *ngFor="let point of solution; let i = index" class="point-item">{{ point }}</span>
+            <img src="./../../assets/arrivee.png">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header text-bg-primary">Score</div>
+          <div class="card-body">
+            <p>Distance: {{this.distance}} km</p>
+            <p>Time: {{this.time}} s</p>
+            <p>Risk: {{this.risk}} %</p>
+            <p>Consumption: {{this.consumption}} kWh</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-12 col-12">
+        <div class="card">
+          <div class="card-header text-bg-primary d-flex justify-content-between align-items-center">
+            Map
+            <button (click)=fullscreen()><i class="bi bi-arrows-angle-expand"></i></button>
+          </div>
+          <div class="card-body">
+            <div *ngIf="!iframeLoaded">
+              <div class="spinner-border text-primary text-center" style="width: 80px; height: 80px;" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <p *ngIf="errorMessage">{{ errorMessage }}</p>
+            <iframe id="editor" *ngIf="iframeLoaded" src='http://localhost:5000/spp.png' width="100%" height="500"
+              title="Included Page" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-6 text-center">
+        <button class="btn btn-primary" (click)="return()">Previous</button>
+      </div>
+      <div class="col-md-6 col-6 text-center">
+        <button class="btn btn-primary" (click)="submit()">Done</button>
+      </div>
+    </div>
+  </ng-template>
+</main>

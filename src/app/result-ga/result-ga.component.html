@@ -1,0 +1,50 @@
+<main id="main" class="main">
+  <div *ngIf="loading; else gaResults">
+    <app-spinner></app-spinner>
+  </div>
+
+  <ng-template #gaResults>
+    <div class="page-title">
+      <h1>GA results</h1>
+    </div>
+
+    <div class="graph-display">
+      <button class="nav-button" (click)="prevGraph()">&#8249;</button>
+      <div class="graph-container">
+        <div class="graph">
+          <img [src]="graphs[currentIndex].src" [alt]="graphs[currentIndex].alt" />
+          <p>{{ graphs[currentIndex].label }}</p>
+        </div>
+      </div>
+      <button class="nav-button" (click)="nextGraph()">&#8250;</button>
+    </div>
+
+    <div class="csv-results">
+      <h2>CSV Data Results</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Run</th>
+            <th>Permutation optimale</th>
+            <th>Nombre de clients insérés</th>
+            <th>Énergie Finale</th>
+            <th>Temps d'attente</th>
+            <th>Temps d'exécution</th>
+            <th>Mission list</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of csvData">
+            <td>{{ data.run }}</td>
+            <td>{{ data.permutationOpt }}</td>
+            <td>{{ data.clientsInserted }}</td>
+            <td>{{ data.finalEnergy }}</td>
+            <td>{{ data.waitingTime }}</td>
+            <td>{{ data.executionTime }}</td>
+            <td>{{ data.missionList }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </ng-template>
+</main>

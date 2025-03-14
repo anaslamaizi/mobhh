@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-sm-12 col-12 mt-3">{{messageInfo}}</div>
+</div>
+
+<div class="row mb-3">
+  <div class="col-sm-6 col-6">
+    <label class="col-form-label" for="depart">Departure:</label>
+    <div>
+      <input class="form-control" type="number" placeholder="Starting Point" id="depart" (change)="onInputChange('depart')">
+    </div>
+  </div>
+  <div class="col-sm-6 col-6">
+    <label class="col-form-label" for="arrivee">Arrival:</label>
+    <div>
+      <input class="form-control" type="number" placeholder="Destination" id="arrivee" (change)="onInputChange('arrivee')">
+    </div>
+  </div>
+</div>
+<div class="row mb-3">
+  <span id="errorMessage" style="color: red;"></span>
+</div>
+<div class="row mb-3">
+  <div id="trajectoryGraph"></div>
+</div>

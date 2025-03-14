@@ -1,0 +1,27 @@
+<div class="guide-container">
+    <button class="button button-rect" *ngIf="!showGuide" (click)="showGuide = true">Open guide</button>
+  
+    <div *ngIf="showGuide" class="guide-content">
+      <h3>Guide Questions</h3>
+  
+      <div *ngFor="let question of questions; let i = index" class="question">
+        <p>{{ question.text }}</p>
+        <div *ngFor="let option of question.options" class="option">
+          <input
+            type="radio"
+            name="question-{{ i }}"
+            [value]="option"
+            (change)="onSelectAnswer(i, option)"
+          />
+          {{ option }}
+        </div>
+      </div>
+  
+      <button class="button button-rect" (click)="submitAnswers()">Submit</button>
+      
+      <div *ngIf="solution">
+        <h4>Recommended Solution: {{ solution }}</h4>
+      </div>
+    </div>
+  </div>
+  

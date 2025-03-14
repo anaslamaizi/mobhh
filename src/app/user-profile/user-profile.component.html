@@ -1,0 +1,18 @@
+<main id="main" class="main">
+    <div class="pagetitle">
+      <h1>Profile</h1>
+    </div>
+    <div class="container">
+      <div class="row justify-content-center">
+        <form #profileForm="ngForm" (ngSubmit)="onSubmit()">
+            <label for="employment" class="form-label">Employment:</label>
+            <input name="employmentInput" id="employment" class="form-control" type="text" placeholder="Employment" [(ngModel)]="employmentInput" required #firstName="ngModel">
+           
+               <button type="submit" class="btn btn-success" [disabled]="!profileForm.form.valid">Submit</button>
+        </form>
+      </div>
+    </div>
+</main>
+
+
+

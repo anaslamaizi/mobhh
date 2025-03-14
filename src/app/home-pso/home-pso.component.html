@@ -1,0 +1,28 @@
+<div *ngIf="loading; else homepsoTemplate">
+  <app-spinner></app-spinner>
+</div>
+<ng-template #homepsoTemplate>
+<div class="center-container">
+  <div class="top-center">
+    <div class="input-container">
+      <label>
+        <input type="radio" name="algorithm" value="algorithm1" [(ngModel)]="selectedAlgorithm" (change)="checkFormValidity()"/>
+        PSO (Particle Swarm Optimization)
+      </label>
+      <label>
+        <input type="radio" name="algorithm" value="algorithm2" [(ngModel)]="selectedAlgorithm" (change)="checkFormValidity()"/>
+        GA (Genetic Algorithm)
+      </label>
+    </div>
+  </div>
+
+  <div class="middle-center">
+    <input type="file" id="fileInput" (change)="onFileChange($event)" accept=".json"/>
+    <label for="fileInput" [ngClass]="{'btn-primary': !fileUploaded, 'btn-success': fileUploaded}" class="file-label">Upload File</label>
+  </div>
+
+  <div class="bottom-center my-custom-div">
+    <button class="btn-upload" [ngClass]="{'btn-disabled': !formValid, 'btn-primary': formValid}" [disabled]="!formValid" (click)="processFile()">Process</button>
+  </div>
+</div>
+</ng-template>

@@ -1,0 +1,57 @@
+<main id="main" class="main">
+    <div class="center-container">
+        <div>
+            <h1 class="top-center">Upload your files to visualize the charts</h1>
+            <div class="button-container">
+                <!-- Bouton pour le premier fichier -->
+                <input type="file" id="instanceFile" (change)="onInstanceFileUploadedChange($event)" accept=".csv"
+                    hidden />
+                <label for="instanceFile"
+                    [ngClass]="{'btn-primary': !isInstanceFileUploaded, 'btn-success': isInstanceFileUploaded}"
+                    class="button-rect">
+                    {{ isInstanceFileUploaded ? 'Instance File Uploaded ✔' : 'Upload Instance File' }}
+                </label>
+
+                <!-- Bouton pour le second fichier -->
+                <input type="file" id="timeMatrixFile" (change)="onTimeMatrixFileUploadedChange($event)" accept=".csv"
+                    hidden />
+                <label for="timeMatrixFile"
+                    [ngClass]="{'btn-primary': !isTimeMatrixFileUploaded, 'btn-success': isTimeMatrixFileUploaded}"
+                    class="button-rect">
+                    {{ isTimeMatrixFileUploaded ? 'Time Matrix File Uploaded ✔' : 'Upload Time Matrix File' }}
+                </label>
+            </div>
+        </div>
+
+        <!-- Graphiques pour le premier fichier -->
+        <div *ngIf="isInstanceFileUploaded" class="chart-wrapper">
+            <h2>Instance File Charts</h2>
+            <div id="instance-chart-container" class="chart-container"></div>
+            <div class="navigation-buttons">
+                <button class="btn-nav" (click)="prevInstanceChart()"
+                    [disabled]="currentInstanceChartIndex === 0">&#9664;
+                    Previous</button>
+                <button class="btn-nav" (click)="nextInstanceChart()"
+                    [disabled]="currentInstanceChartIndex === instanceCharts.length - 1">Next &#9654;</button>
+            </div>
+        </div>
+
+        <!-- Graphiques pour le second fichier -->
+        <div *ngIf="isTimeMatrixFileUploaded" class="chart-wrapper">
+            <h2>Time Matrix File Charts</h2>
+            <div id="time-matrix-chart-container" class="chart-container"></div>
+            <div class="navigation-buttons">
+                <button class="btn-nav" (click)="prevTimeMatrixChart()"
+                    [disabled]="currentTimeMatrixChartIndex === 0">&#9664; Previous</button>
+                <button class="btn-nav" (click)="nextTimeMatrixChart()"
+                    [disabled]="currentTimeMatrixChartIndex === timeMatrixCharts.length - 1">Next &#9654;</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-center my-custom-div">
+        <button class="btn-upload" [ngClass]="{'btn-disabled': formValid, 'btn-primary': formValid}"
+            (click)="processFile()">Process</button>
+    </div>
+
+</main>

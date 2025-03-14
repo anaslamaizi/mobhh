@@ -1,0 +1,36 @@
+<div *ngIf="loading; else formTemplate2">
+  <app-spinner></app-spinner>
+</div>
+<ng-template #formTemplate2>
+
+
+  <div class="custom-row">
+    <div class="custom-div">
+      <div class="custom-row">
+        <h3>RESULT:</h3>
+      </div>
+      <div class="custom-row">
+        <div class="custom-div">
+          <div class="custom-row">
+            Distance: {{this.distance}} km
+          </div>
+ 
+        </div>
+        <div class="custom-div">
+          <div class="custom-row">
+            Time: {{this.time}} s
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="custom-div-frame">
+
+
+    </div>
+  </div>
+
+  <div class="custom-row">
+    <button mat-flat-button color="primary" (click)="return()">Previous</button>
+    <button mat-flat-button color="primary" (click)="displaySolution()">Solution data</button>
+  </div>
+</ng-template>
